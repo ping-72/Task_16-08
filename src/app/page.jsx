@@ -51,10 +51,10 @@ const HomePage = () => {
     <div className="container mx-auto mt-6 ">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mb-5  ">
         {products.map((product) => (
-          <div >
+          <div key={product.id}>
 
             <div className='items-center text-left  justify-center border p-4 rounded-lg shadow-md hover:cursor-pointer'>
-              <div key={product.id} className=" p-4 rounded-lg">
+              <div className=" p-4 rounded-lg">
                 <div className='flex justify-center'>
                   <Image src={product.image} alt={product.title} className="w-auto h-60 object-cover" />
                 </div>

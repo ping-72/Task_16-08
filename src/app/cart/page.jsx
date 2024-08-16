@@ -34,7 +34,7 @@ const CartPage = () => {
                          {cart.map((item) => (
 
 
-                              <div className='border rounded-lg shadow-md shadow-slate-500 my-3 px-4 py-3'>
+                              <div key={item.id} className='border rounded-lg shadow-md shadow-slate-500 my-3 px-4 py-3'>
                                    <div className="flex items-center justify-between mb-4">
                                         <Image src={item.image} alt={item.name} className="w-auto h-40 object-cover" />
                                         <div className='w-72'>
