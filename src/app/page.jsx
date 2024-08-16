@@ -2,6 +2,7 @@
 
 import { useCart } from '../CartContext/ProductContext.jsx';
 import { useState, useEffect } from 'react';
+import Image from 'next/image.js';
 
 const HomePage = () => {
   const { addToCart } = useCart();
@@ -20,7 +21,6 @@ const HomePage = () => {
         const data = await response.json();
         setProducts(data);
       } catch {
-        setError(error);
         console.log(error)
       }
       finally {
@@ -56,7 +56,7 @@ const HomePage = () => {
             <div className='items-center text-left  justify-center border p-4 rounded-lg shadow-md hover:cursor-pointer'>
               <div key={product.id} className=" p-4 rounded-lg">
                 <div className='flex justify-center'>
-                  <img src={product.image} alt={product.title} className="w-auto h-60 object-cover" />
+                  <Image src={product.image} alt={product.title} className="w-auto h-60 object-cover" />
                 </div>
                 <h2 className="mt-10 text-lg font-bold">
                   {product.title.length > 25 ? `${product.title.slice(0, 25)}...` : product.title}
